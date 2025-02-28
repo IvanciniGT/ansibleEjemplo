@@ -1,0 +1,14 @@
+- hosts:                all
+  gather_facts:         False
+  tasks:
+    - debug:
+        msg:            "Hacer curl a google"
+    - name:             "Asegurar que tenemos los repos actualizados"
+        apt:
+          update_cache: True
+    - name:             "Asegurar que tenemos curl instalado"
+        apt:
+          state:        present
+          name:         curl
+    - name:             "Comprobar que podemos hacer curl"
+        shell:          curl google.es
