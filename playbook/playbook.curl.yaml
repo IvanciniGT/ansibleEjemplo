@@ -4,11 +4,11 @@
     - debug:
         msg:            "Hacer curl a google"
     - name:             "Asegurar que tenemos los repos actualizados"
-        apt:
+      apt:
           update_cache: True
     - name:             "Asegurar que tenemos curl instalado"
-        apt:
+      apt:
           state:        present
           name:         curl
     - name:             "Comprobar que podemos hacer curl"
-        shell:          curl google.es
+      shell:          curl google.es
